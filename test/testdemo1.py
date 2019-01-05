@@ -24,7 +24,11 @@ def add(self, x, y):
 
 def excute_task():
     """
-    测试使用apply_async方法。指定使用的队列
+    测试使用apply_async方法。
+    指定使用的队列queue
+    等待一段时间后再执行 countdown，单位是s
+    指定任务开始执行时间 eta ，这个是UTC时间
+    设置超时时间 expires 单位是s
     :return:
     """
     add.apply_async((1,3),queue='add')
