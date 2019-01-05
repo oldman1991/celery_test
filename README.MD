@@ -7,7 +7,11 @@
 ## celery的一些说明
 1. celery使用redis做消息队列的时间，如果队列里面没有任务，则队列也会自动的被删除，所以keys *的时间是看不到这个list的key
 
+## 日志说明
+1. 在setting.py 里面 from .log_settings import *，可以使用logging模块写文件日志
+
 ## 项目说明
 1.  `test.testdemo1`
     celery的一些正常的调用，包括一些参数的使用
+
 
