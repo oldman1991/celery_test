@@ -1,7 +1,9 @@
 # 项目说明
 ## 启动方式
 1.  `celery worker -A celery_test -l debug`
+
     -l: 日志的等级，和logging模块的等级一样，只有等级大于等于该参数的日志才会被打印输出出来
+
     -Q: 指定启动的队列，如果不指定，则启动默认配置在CELERY_QUEUES参数里面的队列
 
 ## celery的一些说明
