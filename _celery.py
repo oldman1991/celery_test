@@ -11,7 +11,7 @@ from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'celery_test.settings')
 
-app = Celery('artemis')
+app = Celery('celery_test')
 
 
 # Using a string here means the worker will not have to

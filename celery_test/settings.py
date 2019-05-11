@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+import sys
 from kombu import Queue
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'celery_test'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -98,9 +101,14 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 BROKER_URL = 'redis://127.0.0.1:6379/7'
+# CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/7'
+# CELERY_QUEUES = (
+#     Queue('add'),
+# )
 
-CELERY_QUEUES = (
-    Queue('add'),
-)
+# CELERYD_POOL_RESTARTS= True
+
+CELERY_ACCEPT_CONTET= ['pickle']
 
 from .log_settings import *
+print(sys.path)

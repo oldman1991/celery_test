@@ -1,13 +1,13 @@
 # coding=utf-8
 # create by oldman at 17/7/14
 import logging
-from celery import shared_task
+from _celery import app
 
 from celery_test.logger import info_logger
 
 
-@shared_task(bind=True)
-def add(self, x, y):
+@app.task(bind=True)
+def add(self,x, y):
     """
     测试bind参数，打印task_id
     调用方式 add.delay(1,2)
@@ -32,3 +32,8 @@ def excute_task():
     :return:
     """
     add.apply_async((1,3),queue='add')
+
+
+
+add.delay(2,3)
+# add.delay(3,4)
