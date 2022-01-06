@@ -1,4 +1,4 @@
 django==1.8.2
-celery==4.1.0
+celery==5.2.2
 django-redis==4.4.4
 kombu==4.1.0
